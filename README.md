@@ -11,6 +11,7 @@ This API models teams and players in the Womens World Cup 2019.
 ### API endpoints
 | Endpoint | Functionality |
 |----------|---------------|
+| POST   /get_api_key | Get an api key |
 | GET /teams   | Fetch all teams|
 | POST /teams | Create a new team|
 | GET    /teams/:id | Fetch a team with a known id |
@@ -27,6 +28,9 @@ This API models teams and players in the Womens World Cup 2019.
 - Clone project from Github.
 - `cd` into the project directory and run `bundle`
 - Run the server with `rails s`
+- First get an api key with request like `http POST :3000/get_api_key email='test@wwc.com`
+- Make requests with the assigned api key for example
+> http :3000/teams/ 'Authorization:Token token=cnjVnE9c77f2ZBGJcWwMcwTT'
 
 ### Testing
 To run tests

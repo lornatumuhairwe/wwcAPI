@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resources :teams do
     resources :players
   end
+
+  post '/get_api_key', to: 'users#generate_api_key'
 end
