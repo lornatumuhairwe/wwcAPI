@@ -18,8 +18,8 @@ RSpec.describe 'Teams API', type: :request do
   end
 
   describe 'POST /teams' do
-    let(:valid_attributes) { { team: { name: 'U.S.A' } } }
-    let(:invalid_attributes) { { team: { name: '' }}}
+    let(:valid_attributes) { { name: 'U.S.A' } }
+    let(:invalid_attributes) { { name: '' } }
 
     context 'with valid attributes' do
       before { post '/teams', params: valid_attributes }
@@ -73,7 +73,7 @@ RSpec.describe 'Teams API', type: :request do
   end
 
   describe 'PUT /teams/:id' do
-    before { put "/teams/#{team_id}", params: { team: { name: 'USNWT' } } }
+    before { put "/teams/#{team_id}", params: { name: 'USNWT' } }
 
     it 'returns status code 200' do
       expect(response).to have_http_status(200)

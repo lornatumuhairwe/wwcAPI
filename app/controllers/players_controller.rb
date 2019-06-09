@@ -30,7 +30,7 @@ class PlayersController < ApplicationController
   private
 
   def player_params
-    params.require(:player).permit(:name, :position)
+    params.permit(:name, :position)
   end
 
   def set_team

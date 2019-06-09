@@ -27,7 +27,7 @@ class TeamsController < ApplicationController
   private
 
   def todo_params
-    params.require(:team).permit(:name)
+    params.permit(:name)
   end
 
   def set_todo

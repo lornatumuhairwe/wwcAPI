@@ -59,8 +59,8 @@ RSpec.describe 'Players API' do
   end
 
   describe 'POST /teams/:team_id/players' do
-    let(:valid_attributes) { { player: { name: 'Alex Morgan', position: 'Forward' } } }
-    let(:invalid_attributes) { { player: { position: 'Forward' } } }
+    let(:valid_attributes) { { name: 'Alex Morgan', position: 'Forward' } }
+    let(:invalid_attributes) { { position: 'Forward' } }
 
     context 'with valid attributes' do
       before { post "/teams/#{team_id}/players", params: valid_attributes }
@@ -88,7 +88,7 @@ RSpec.describe 'Players API' do
   end
 
   describe 'PUT /teams/:team_id/players/:id' do
-    before { put "/teams/#{team_id}/players/#{player_id}", params: { player: { name: 'Rapinoe' } } }
+    before { put "/teams/#{team_id}/players/#{player_id}", params: { name: 'Rapinoe' } }
 
     it 'returns http status code 200' do
       expect(response).to have_http_status(200)
