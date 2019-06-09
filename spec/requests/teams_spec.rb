@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Teams API', type: :request do
   let!(:teams) { create_list(:team, 10) }
   let(:team_id) { teams.first.id }
+
   describe 'GET /teams' do
     before { get '/teams' }
 
@@ -22,6 +23,7 @@ RSpec.describe 'Teams API', type: :request do
 
     context 'with valid attributes' do
       before { post '/teams', params: valid_attributes }
+
       it 'creates a new team' do
         expect(json['name']).to eq('U.S.A')
       end
@@ -33,6 +35,7 @@ RSpec.describe 'Teams API', type: :request do
 
     context 'with invalid attributes' do
       before { post '/teams', params: invalid_attributes }
+
       it 'returns a 422 status code' do
         expect(response).to have_http_status(422)
       end
@@ -70,7 +73,8 @@ RSpec.describe 'Teams API', type: :request do
   end
 
   describe 'PUT /teams/:id' do
-    before { put "/teams/#{team_id}", params: { team: { name: 'USNWT' }}}
+    before { put "/teams/#{team_id}", params: { team: { name: 'USNWT' } } }
+
     it 'returns status code 200' do
       expect(response).to have_http_status(200)
     end

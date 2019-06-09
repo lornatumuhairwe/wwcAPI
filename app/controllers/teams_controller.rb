@@ -2,21 +2,21 @@ class TeamsController < ApplicationController
   before_action :set_todo, only: [:show, :update, :destroy]
   def index
     @teams = Team.all
-    render json: @teams
+    json_response(@teams)
   end
 
   def create
     @team = Team.create!(todo_params)
-    render json: @team, status: :created
+    json_response(@team, status: :created)
   end
 
   def show
-    render json: @team
+    json_response(@team)
   end
 
   def update
     @team.update(todo_params)
-    render json: @team
+    json_response(@team)
   end
 
   def destroy
