@@ -7,7 +7,7 @@ class TeamsController < ApplicationController
 
   def create
     @team = Team.create!(todo_params)
-    json_response(@team, status: :created)
+    json_response(@team, :created)
   end
 
   def show
