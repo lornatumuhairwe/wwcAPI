@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  namespace :v1 do
+  scope module: 'v2', constraints: ApiVersion.new('v2') do
     resources :teams do
       resources :players
     end
   end
 
-  namespace :v2 do
+  scope module: 'v1', constraints: ApiVersion.new('v1', true) do
     resources :teams do
       resources :players
     end
