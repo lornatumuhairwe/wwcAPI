@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  validates_presence_of :email
 
   before_create :generate_api_key
 
