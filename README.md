@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.com/lornatumuhairwe/wwcAPI.svg?branch=master)](https://travis-ci.com/lornatumuhairwe/wwcAPI)
+[![Coverage Status](https://coveralls.io/repos/github/lornatumuhairwe/wwcAPI/badge.svg?branch=master)](https://coveralls.io/github/lornatumuhairwe/wwcAPI?branch=master)
+
 # WWC 2019
 
 Prerequisites
